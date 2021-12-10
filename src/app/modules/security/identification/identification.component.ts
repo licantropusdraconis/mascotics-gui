@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SecurityService } from 'src/app/services/security.service';
 //var cryptoJS = require('crypto-js');
 import * as cryptoJS from "crypto-js";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-identification',
@@ -18,7 +19,8 @@ export class IdentificationComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private securityService: SecurityService
+    private securityService: SecurityService,
+    private router: Router
     ) 
   { }
 
@@ -40,7 +42,16 @@ export class IdentificationComponent implements OnInit {
       alert("Datos inválidos")
     })*/
     this.securityService.Identify(usuario, claveCifrada).subscribe({
-      next: (v) => {alert(`Datos ${usuario} ${claveCifrada}`),console.log(v)},
+      next: (v) => {
+        //save data in local storage
+        this.securityService.SaveSession(v),
+        //alert to show user everything is ok
+        alert(`Datos ${usuario} ${claveCifrada}`),
+        //redireccionar al home cuando ingrese sesión
+        this.router.navigate(["home"]);
+        //show in console messages to see if everything was perfect
+        console.log(v)
+      },
       error: (e) => {alert(`Datos inválidos \n ${usuario} ${claveCifrada}`),console.error(e)},
       complete: () => console.info('subscribe transaction complete')
     })
