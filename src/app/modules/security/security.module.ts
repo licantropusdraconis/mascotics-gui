@@ -5,6 +5,7 @@ import { SecurityRoutingModule } from './security-routing.module';
 import { IdentificationComponent } from './identification/identification.component';
 import { PasswordChangeComponent } from './password-change/password-change.component';
 import { PasswordRecoveryComponent } from './password-recovery/password-recovery.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { PasswordRecoveryComponent } from './password-recovery/password-recovery
   ],
   imports: [
     CommonModule,
-    SecurityRoutingModule
+    SecurityRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SecurityModule { }

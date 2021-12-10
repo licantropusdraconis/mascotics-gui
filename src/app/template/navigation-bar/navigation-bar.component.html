@@ -1,78 +1,174 @@
 <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="search-person">Search Person</a></li>
-    <li class="divider"></li>
-    <li><a href="create-person">Create Person</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-person">Edit Person</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-person">Delete Person</a></li>
-    <li class="divider"></li>
-    <li><a href="search-pet">Search Pet</a></li>
-    <li class="divider"></li>
-    <li><a href="create-pet">Create Pet</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-pet-owner">Edit Pet</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-pet-owner">Delete Pet</a></li>
-    <li class="divider"></li>
-    <li><a href="search-pet-owner">Search Pet Owner</a></li>
-    <li class="divider"></li>
-    <li><a href="create-pet-owner">Create Pet Owner</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-pet-owner">Edit Pet Owner</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-pet-owner">Delete Pet Owner</a></li>
-    <li class="divider"></li>
-    <li><a href="search-veterinarian">Search Doc</a></li>
-    <li class="divider"></li>
-    <li><a href="create-veterinarian">Create Doc</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-veterinarian">Edit Doc</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-veterinarian">Delete Doc</a></li>
-    <li class="divider"></li>
-    <li><a href="search-veterinary">Search Veterinary</a></li>
-    <li class="divider"></li>
-    <li><a href="create-veterinary">Create Veterinary</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-veterinary">Edit Veterinary</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-veterinary">Delete Veterinary</a></li>
-  </ul>
-  <ul id="dropdown2" class="dropdown-content">
-    <li><a href="search-appointment">Search Appointment</a></li>
-    <li class="divider"></li>
-    <li><a href="create-appointment">Create Appointment</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-appointment">Edit Appointment</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-appointment">Delete Appointment</a></li>
-    <li class="divider"></li>
-    <li><a href="search-check">Search Check</a></li>
-    <li class="divider"></li>
-    <li><a href="create-check">Create Check</a></li>
-    <li class="divider"></li>
-    <li><a href="edit-check">Edit Check</a></li>
-    <li class="divider"></li>
-    <li><a href="delete-check">Delete Check</a></li>
-  </ul>
 <nav>
-    <div class="nav-wrapper teal darken-4">
-      <a href="#!" class="brand-logo right">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="home">Home</a></li>
-        <li><a href="#" class="dropdown-trigger" data-target="dropdown1">Administration</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Visit</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper teal darken-4">
+    <a href="#!" class="brand-logo right"><i class="material-icons">pets</i></a>
+    <a href="#!" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="left hide-on-med-and-down">
+      <li><a routerLink="home"><i class="material-icons left">home</i>Home</a></li>
+      <li><a href="#!" class="dropdown-trigger" data-target="dropdown1"><i class="material-icons left">build</i>Administration</a></li>
+      <li><a href="#!" class="dropdown-trigger" data-target="dropdown3"><i class="material-icons left">face</i>Security</a></li>
+      <li><a href="#!" class="dropdown-trigger" data-target="dropdown2"><i class="material-icons left">person_pin</i>Veterinary Visit</a></li>
+    </ul>
+  </div>
+</nav>
+<ul id="dropdown1" class="dropdown-content">
+  <li><a routerLink="administration/search-person">Search Person</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/create-person">Create Person</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/edit-person">Edit Person</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/delete-person">Delete Person</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/search-pet">Search Pet</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/create-pet">Create Pet</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/edit-pet-owner">Edit Pet</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/delete-pet-owner">Delete Pet</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/search-pet-owner">Search Pet Owner</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/create-pet-owner">Create Pet Owner</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/edit-pet-owner">Edit Pet Owner</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/delete-pet-owner">Delete Pet Owner</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/search-veterinarian">Search Doc</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/create-veterinarian">Create Doc</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/edit-veterinarian">Edit Doc</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/delete-veterinarian">Delete Doc</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/search-veterinary">Search Veterinary</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/create-veterinary">Create Veterinary</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/edit-veterinary">Edit Veterinary</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="administration/delete-veterinary">Delete Veterinary</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a routerLink="veterinary-visit/search-appointment">Search Appointment</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/create-appointment">Create Appointment</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/edit-appointment">Edit Appointment</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/delete-appointment">Delete Appointment</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/search-check">Search Check</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/create-check">Create Check</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/edit-check">Edit Check</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="veterinary-visit/delete-check">Delete Check</a></li>
+</ul>
+<ul id="dropdown3" class="dropdown-content">
+  <li><a routerLink="security/identification">Identification</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="security/password-change">Password - Change</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="security/password-recovery">Password - Recovery</a></li>
+</ul>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Administration</a></li>
-    <li><a href="#">Security</a></li>
-    <li><a href="#">Visit</a></li>
-  </ul>
+<ul class="sidenav" id="mobile-demo">
+  <li class="logo"><a href="#!" class="brand-logo"><i class="material-icons">pets</i>MascoTics</a></li>
+  <li><a routerLink="home"><i class="material-icons left">home</i>Home</a></li>
+  <li>
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">build</i>Administration</div>
+        <!--<a href="#!" class="collapsible-header">Administration</a>-->
+        <div class="collapsible-body">
+          <ul id="dropdown4" class="">
+            <li><a routerLink="administration/search-person">Search Person</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/create-person">Create Person</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/edit-person">Edit Person</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/delete-person">Delete Person</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/search-pet">Search Pet</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/create-pet">Create Pet</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/edit-pet-owner">Edit Pet</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/delete-pet-owner">Delete Pet</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/search-pet-owner">Search Pet Owner</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/create-pet-owner">Create Pet Owner</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/edit-pet-owner">Edit Pet Owner</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/delete-pet-owner">Delete Pet Owner</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/search-veterinarian">Search Doc</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/create-veterinarian">Create Doc</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/edit-veterinarian">Edit Doc</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/delete-veterinarian">Delete Doc</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/search-veterinary">Search Veterinary</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/create-veterinary">Create Veterinary</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/edit-veterinary">Edit Veterinary</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="administration/delete-veterinary">Delete Veterinary</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">face</i>Security</div>
+        <!--<a href="#!" class="collapsible-header">Security</a>-->
+        <div class="collapsible-body">
+          <ul id="dropdown5" class="">
+            <li><a routerLink="security/identification">Identification</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="security/password-change">Password - Change</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="security/password-recovery">Password - Recovery</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">person_pin</i>Visit</div>
+        <!--<a href="#!" class="collapsible-header">Visit</a>-->
+        <div class="collapsible-body">
+          <ul id="dropdown6" class="collapsible-content">
+            <li><a routerLink="veterinary-visit/search-appointment">Search Appointment</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/create-appointment">Create Appointment</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/edit-appointment">Edit Appointment</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/delete-appointment">Delete Appointment</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/search-check">Search Check</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/create-check">Create Check</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/edit-check">Edit Check</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="veterinary-visit/delete-check">Delete Check</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+
+  </li>
+
+</ul>

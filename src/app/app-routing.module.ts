@@ -15,26 +15,27 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'home'
   },
-  {
-    path:"**",
-    component: ErrorComponent
-  },
   {/* Lazy loading */
     path:"administration",
-    loadChildren: () => import("./modules/administration/administration.module").then(x => x.AdministrationModule)
+    loadChildren: () => import("./modules/administration/administration.module").then(m1 => m1.AdministrationModule)
   },
   {/* Lazy loading */
     path:"security",
-    loadChildren: () => import("./modules/security/security.module").then(x => x.SecurityModule)
+    loadChildren: () => import("./modules/security/security.module").then(m2 => m2.SecurityModule)
   },
   {/* Lazy loading */
     path:"veterinary-visit",
-    loadChildren: () => import("./modules/veterinary-visit/veterinary-visit.module").then(x => x.VeterinaryVisitModule)
+    loadChildren: () => import("./modules/veterinary-visit/veterinary-visit.module").then(m3 => m3.VeterinaryVisitModule)
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: ErrorComponent
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
