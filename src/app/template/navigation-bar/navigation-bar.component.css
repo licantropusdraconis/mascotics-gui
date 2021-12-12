@@ -1,0 +1,22 @@
+/*#dropdown-appointment {
+    margin-left: 100%;
+ }
+.dropdown-content.nested {
+    overflow-y: visible;
+ }*/
+/*.dropdown-content > li {
+    position: relative;
+}
+.dropdown-content li .dropdown-content {
+    position: absolute;
+    left: 0 !important;
+    top: 0 !important;
+  }*/
+.dropdown-content{
+    overflow: visible !important;
+    min-width: 300px !important;
+}
+/*#AppointmentLinks, #AppointmentLinks a, .collapsible-body{
+    padding:none !important;
+    width:100%;
+}*/

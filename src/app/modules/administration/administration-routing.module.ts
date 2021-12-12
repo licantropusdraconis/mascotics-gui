@@ -27,7 +27,7 @@ const routes: Routes = [
     component: CreatePersonComponent
   },
   {
-    path: 'edit-person',
+    path: 'edit-person/:id',
     component: EditPersonComponent
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
     component: CreatePetComponent
   },
   {
-    path: 'edit-pet',
+    path: 'edit-pet/:id',
     component: EditPetComponent
   },
   {
@@ -59,7 +59,7 @@ const routes: Routes = [
     component: CreateOwnerComponent
   },
   {
-    path: 'edit-pet-owner',
+    path: 'edit-pet-owner/:id',
     component: EditOwnerComponent
   },
   {
@@ -75,7 +75,7 @@ const routes: Routes = [
     component: CreateDocComponent
   },
   {
-    path: 'edit-veterinarian',
+    path: 'edit-veterinarian/:id',
     component: EditDocComponent
   },
   {
@@ -91,7 +91,7 @@ const routes: Routes = [
     component: CreateVeterinaryComponent
   },
   {
-    path: 'edit-veterinary',
+    path: 'edit-veterinary/:NIT',
     component: EditVeterinaryComponent
   },
   {
@@ -100,6 +100,10 @@ const routes: Routes = [
   },
   {
     path: 'search-veterinary',
+    component: SearchVeterinaryComponent
+  },
+  {
+    path: 'list-veterinary',
     component: SearchVeterinaryComponent
   },
 ];

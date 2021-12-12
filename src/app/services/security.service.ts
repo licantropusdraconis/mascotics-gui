@@ -97,4 +97,16 @@ export class SecurityService {
     let stringData = localStorage.getItem("sessionData");
     return stringData;
   }
+
+  /* method to obtain token and use in security service */
+  GetToken(){
+    let stringData = localStorage.getItem("sessionData");
+    if(stringData){
+      let data = JSON.parse(stringData);
+      return data.tk;
+    }
+    else{
+      return null;
+    }
+  }
 }

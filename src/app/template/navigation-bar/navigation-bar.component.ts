@@ -34,9 +34,11 @@ export class NavigationBarComponent implements OnInit {
       var elems = document.querySelectorAll('.sidenav');
       var elems2 = document.querySelectorAll('.dropdown-trigger');
       var elems3 = document.querySelectorAll('.collapsible');
+      //var elems4 = document.querySelectorAll('#dropdown-appointment');
       var instances = M.Sidenav.init(elems);
-      var instances2 =M.Dropdown.init(elems2,{hover:true,constrainWidth:true,closeOnClick:true,coverTrigger:false});
+      var instances2 =M.Dropdown.init(elems2,{hover:false,constrainWidth:false,closeOnClick:false,coverTrigger:false});
       var instances3 =M.Collapsible.init(elems3);
+      //var instances4 =M.Dropdown.init(elems4,{hover:true,constrainWidth:false,coverTrigger:false});
     }
     document.addEventListener('DOMContentLoaded', function(){
       NavigationMenuEffects();

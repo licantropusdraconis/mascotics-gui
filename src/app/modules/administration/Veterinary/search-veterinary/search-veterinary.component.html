@@ -1,1 +1,38 @@
-<p>search-veterinary works!</p>
+<div class="row">
+    <a routerLink="/administration/create-veterinary" class="btn-large pulse right waves-effect">Nueva
+        Veterinaria<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                NIT
+            </th>
+            <th class="white-text center-align">
+                Nombre
+            </th>
+            <th class="white-text center-align">
+                Dirección
+            </th>
+            <th class="white-text right-align">
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of veterinaryList">
+            <td class="left-align">
+                {{vt.NIT}}
+            </td>
+            <td class="center-align">
+                {{vt.Nombre}}
+            </td>
+            <td class="center-align">
+                {{vt.Direccion}}
+            </td>
+            <td class="right-align">
+                <a routerLink="/administration/edit-veterinary/{{vt.NIT}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
