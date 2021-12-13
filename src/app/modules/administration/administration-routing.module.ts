@@ -91,7 +91,7 @@ const routes: Routes = [
     component: CreateVeterinaryComponent
   },
   {
-    path: 'edit-veterinary/:NIT',
+    path: 'edit-veterinary/:id',
     component: EditVeterinaryComponent
   },
   {

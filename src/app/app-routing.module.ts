@@ -27,6 +27,10 @@ const routes: Routes = [
     path:"veterinary-visit",
     loadChildren: () => import("./modules/veterinary-visit/veterinary-visit.module").then(m3 => m3.VeterinaryVisitModule)
   },
+  {/* Lazy loading */
+    path:"information",
+    loadChildren: () => import("./modules/information/information.module").then(m4 => m4.InformationModule)
+  },
   {
     path: '**',
     pathMatch: 'full',

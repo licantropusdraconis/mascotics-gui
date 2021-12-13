@@ -1,42 +1,81 @@
 <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
+  <div class="col s12 m10 l12 offset-m1">
+    <div class="card">
+
+      <div class="card-action teal lighten-1 white-text">
+        <h4>New Veterinary Medical Center <i class="material-icons prefix">security</i></h4>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
-        </div>
+
+      <div class="card-content">
+        <form [formGroup]="fgValidator" (ngSubmit)="CreateVeterinary()">
+          <div class="form-field">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">fingerprint</i>
+              <label for="nit">NIT</label>
+              <input formControlName="nit" type="number" id="nit" class="validate" minlength="5" maxlength="20" required="required">
+              <div class="red accent-1" role="alert">
+                <div *ngIf="(fgValidator.controls['nit'].invalid && fgValidator.controls['nit'].touched) || fgValidator.controls['nit'].dirty">
+                  <small *ngIf="fgValidator.controls['nit'].errors" class="text-danger">NIT is required</small>
+                  <!--question mark(?) is a safe navigation operator-->
+                  <small *ngIf="!fgValidator.controls['nit'].valid" class="text-danger">  - Please register valid values</small>
+                  <small *ngIf="fgValidator.controls['nit'].errors?.['numberRegEx']" class="text-danger">Please provide a valid NIT</small>
+                  <small *ngIf="fgValidator.controls['nit'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                  <small *ngIf="fgValidator.controls['nit'].errors?.['maxLength']" class="text-danger">  - Max 20 characters</small>
+                </div>
+                <!--<strong>Valid ? </strong>{{fgValidator.controls['nit'].valid}} <br>
+                <strong>Invalid ? </strong>{{fgValidator.controls['nit'].invalid}}<br>
+                <strong>Touched ? </strong>{{fgValidator.controls['nit'].touched}}<br> 
+                <strong>Untouched ? </strong>{{fgValidator.controls['nit'].untouched}}<br>
+                <strong>Dirty ? </strong>{{fgValidator.controls['nit'].dirty}}<br>
+                <strong>Pristine ? </strong>{{fgValidator.controls['nit'].pristine}}<br>-->
+                <!-- with touched the user doesn’t need to actually change the value of the input control. Just focus on other thing -->
+                <!-- Dirty is when a user changes value -->
+              </div>
+            </div>
+          </div><br>
+
+          <div class="form-field">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">contacts</i>
+              <label for="nombre">Nombre</label>
+              <input formControlName="nombre" type="text" id="nombre" class="validate" minlength="5" maxlength="30" required="required">
+              <div class="red accent-1" *ngIf="(fgValidator.controls['nombre'].invalid && fgValidator.controls['nombre'].touched) || fgValidator.controls['nombre'].dirty">
+                <small *ngIf="fgValidator.controls['nombre'].errors?.['required']" class="text-danger"> Element is required</small>
+                <small *ngIf="!fgValidator.controls['nombre'].valid" class="text-danger">  - Please register valid values</small>
+                <small *ngIf="fgValidator.controls['nombre'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                <small *ngIf="fgValidator.controls['nombre'].errors?.['maxLength']" class="text-danger">  - Max 30 characters</small>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="form-field">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">public</i>
+              <label for="direccion">Dirección</label>
+              <input formControlName="direccion" type="text" id="direccion" class="validate" minlength="5" maxlength="40" required="required">
+              <div class="red accent-1" *ngIf="(fgValidator.controls['direccion'].invalid && fgValidator.controls['direccion'].touched) || fgValidator.controls['direccion'].dirty">
+                <small *ngIf="fgValidator.controls['direccion'].errors?.['required']" class="text-danger"> Element is required</small>
+                <small *ngIf="!fgValidator.controls['direccion'].valid" class="text-danger">  - Please register valid values</small>
+                <small *ngIf="fgValidator.controls['direccion'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                <small *ngIf="fgValidator.controls['direccion'].errors?.['maxLength']" class="text-danger">  - Max 30 characters</small>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="form-field">
+            <button [disabled]="!fgValidator.valid" class="btn-large waves-effect waves-dark" style="width:100%;">Create
+              <i class="material-icons right">send</i>
+            </button>
+
+            <a class="waves-effect teal lighten-3 waves-light btn-large" style="width:100%;"
+              routerLink="/administration/search-veterinary">List Elements <i
+                class="material-icons right">remove_red_eye
+              </i></a>
+
+          </div><br>
+        </form>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email_inline" type="email" class="validate">
-            <label for="email_inline">Email</label>
-            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-          </div>
-        </div>
-      </div>
-    </form>
+
+    </div>
   </div>
+</div>

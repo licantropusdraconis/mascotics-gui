@@ -23,6 +23,11 @@ export class VeterinaryService {
     return this.http.get<VeterinaryModel[]>(`${this.url}/empresa-veterinaria`)
   }
 
+  GetVeterinaryById(id: string): Observable<VeterinaryModel>{
+    console.log(`Im in GetVeterinary id inside veterinary service`);
+    return this.http.get<VeterinaryModel>(`${this.url}/empresa-veterinaria/${id}`);
+  }
+
   CreateVeterinary(veterinary: VeterinaryModel): Observable<VeterinaryModel>{
     //we send /empresa-veterinaria`, veterinary, because it's entire object veterinary
     return this.http.post<VeterinaryModel>(`${this.url}/empresa-veterinaria`, veterinary,{
@@ -32,8 +37,8 @@ export class VeterinaryService {
     })
   }
 
-  UpdateVeterinary(veterinary: VeterinaryModel): Observable<VeterinaryModel>{
-    return this.http.put<VeterinaryModel>(`${this.url}/empresa-veterinaria`, veterinary,{
+  UpdateVeterinary(veterinary: VeterinaryModel,id: string): Observable<VeterinaryModel>{
+    return this.http.put<VeterinaryModel>(`${this.url}/empresa-veterinaria/${id}`, veterinary,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })

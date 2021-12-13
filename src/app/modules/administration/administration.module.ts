@@ -22,6 +22,7 @@ import { CreateOwnerComponent } from './Pet-owner/create-owner/create-owner.comp
 import { EditOwnerComponent } from './Pet-owner/edit-owner/edit-owner.component';
 import { DeleteOwnerComponent } from './Pet-owner/delete-owner/delete-owner.component';
 import { SearchOwnerComponent } from './Pet-owner/search-owner/search-owner.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -49,7 +50,9 @@ import { SearchOwnerComponent } from './Pet-owner/search-owner/search-owner.comp
   ],
   imports: [
     CommonModule,
-    AdministrationRoutingModule
+    AdministrationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministrationModule { }
