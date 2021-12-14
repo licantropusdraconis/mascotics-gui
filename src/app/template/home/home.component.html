@@ -1,16 +1,21 @@
 <div class="row">
-    <div class="col s12 m10 l12 offset-m1">
-      <div class="card">
-  
-        <div class="card-action teal lighten-1 white-text">
-          <h4>Welcome to MascoTICs!<i class="material-icons prefix">security</i></h4>
-        </div>
-  
-        <div class="card-content centered">
-            <i _ngcontent-uqs-c18="" class="material-icons">pets</i>
-            Please Log in to make an appointment or register the medical check
-        </div>
-  
+  <div class="col s12 m10 l12 offset-m1">
+    <div class="card">
+
+      <div class="card-action teal lighten-1 white-text">
+        <h4>Welcome to MascoTICs!<i class="material-icons prefix">security</i></h4>
       </div>
+
+      <div *ngIf="!sessionStarted" class="card-content centered">
+        <i _ngcontent-uqs-c18="" class="material-icons">pets</i>
+        Please Log in to make an appointment or register the medical check
+      </div>
+
+      <div *ngIf="sessionStarted" class="card-content centered">
+        <i _ngcontent-uqs-c18="" class="material-icons">pets</i>
+        USE OPTIONS TO CREATE, UPDATE, LIST ELEMENTS
+      </div>
+
     </div>
   </div>
+</div>
