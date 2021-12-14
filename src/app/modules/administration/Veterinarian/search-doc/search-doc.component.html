@@ -1,1 +1,38 @@
-<p>search-doc works!</p>
+<div class="row">
+    <a routerLink="/administration/create-veterinarian" class="btn-large pulse right waves-effect">Nuevo
+        Médico Veterinario<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                Id
+            </th>
+            <th class="white-text center-align">
+                Persona
+            </th>
+            <th class="white-text center-align">
+                Veterinaria
+            </th>
+            <th class="white-text right-align">
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of doctorList">
+            <td class="left-align">
+                {{vt.id}}
+            </td>
+            <td class="center-align">
+                {{vt.personaId}}
+            </td>
+            <td class="center-align">
+                {{vt.empresaVeterinariaId}}
+            </td>
+            <td class="right-align">
+                <a routerLink="/administration/edit-veterinarian/{{vt.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

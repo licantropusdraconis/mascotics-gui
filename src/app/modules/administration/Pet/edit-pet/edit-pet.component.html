@@ -1,1 +1,135 @@
-<p>edit-pet works!</p>
+<div class="row">
+    <div class="col s12 m10 l12 offset-m1">
+        <div class="card">
+
+            <div class="card-action teal lighten-1 white-text">
+                <h4>Edit PET <i class="material-icons prefix">security</i></h4>
+            </div>
+
+            <div class="card-content">
+                <form [formGroup]="fgValidator" (ngSubmit)="EditPet()">
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">pets</i>
+                          <label class="active" for="nombre">Nombre</label>
+                          <input formControlName="nombre" type="text" id="nombre" class="validate" minlength="4" maxlength="30" required="required">
+                          <div class="red accent-1" role="alert">
+                            <div *ngIf="(fgValidator.controls['nombre'].invalid && fgValidator.controls['nombre'].touched) || fgValidator.controls['nombre'].dirty">
+                              <small *ngIf="fgValidator.controls['nombre'].errors" class="text-danger">nombre is required</small>
+                              <!--question mark(?) is a safe navigation operator-->
+                              <small *ngIf="!fgValidator.controls['nombre'].valid" class="text-danger">  - Please register valid values</small>
+                              <small *ngIf="fgValidator.controls['nombre'].errors?.['numberRegEx']" class="text-danger">Please provide a valid nombre</small>
+                              <small *ngIf="fgValidator.controls['nombre'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                              <small *ngIf="fgValidator.controls['nombre'].errors?.['maxLength']" class="text-danger">  - Max 20 characters</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div><br>
+            
+                      <div class="form-field">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">pets</i>
+                          <label class="active" for="raza">Raza</label>
+                          <input formControlName="raza" type="text" id="raza" class="validate" minlength="4" maxlength="30" required="required">
+                          <div class="red accent-1" *ngIf="(fgValidator.controls['raza'].invalid && fgValidator.controls['raza'].touched) || fgValidator.controls['raza'].dirty">
+                            <small *ngIf="fgValidator.controls['raza'].errors?.['required']" class="text-danger"> Element is required</small>
+                            <small *ngIf="!fgValidator.controls['raza'].valid" class="text-danger">  - Please register valid values</small>
+                            <small *ngIf="fgValidator.controls['raza'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                            <small *ngIf="fgValidator.controls['raza'].errors?.['maxLength']" class="text-danger">  - Max 30 characters</small>
+                          </div>
+                        </div>
+                      </div><br>
+            
+                      <div class="form-field">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">pets</i>
+                          <label class="active" for="tipoanimalid">Tipo animal</label>
+                          <input formControlName="tipoanimalid" type="text" id="tipoanimalid" class="validate" minlength="24" maxlength="24" required="required">
+                          <div class="red accent-1" *ngIf="(fgValidator.controls['tipoanimalid'].invalid && fgValidator.controls['tipoanimalid'].touched) || fgValidator.controls['tipoanimalid'].dirty">
+                            <small *ngIf="fgValidator.controls['tipoanimalid'].errors?.['required']" class="text-danger"> Element is required</small>
+                            <small *ngIf="!fgValidator.controls['tipoanimalid'].valid" class="text-danger">  - Please register valid values</small>
+                            <small *ngIf="fgValidator.controls['tipoanimalid'].errors?.['minLength']" class="text-danger">  - Min 24 characters</small>
+                            <small *ngIf="fgValidator.controls['tipoanimalid'].errors?.['maxLength']" class="text-danger">  - Max 24 characters</small>
+                          </div>
+                        </div>
+                      </div><br>
+          
+                      <div class="form-field">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">pets</i>
+                            <label class="active" for="estatura">Estatura</label>
+                            <input formControlName="estatura" type="number" id="estatura" class="validate" minlength="1" maxlength="4" required="required">
+                            <div class="red accent-1" role="alert">
+                              <div *ngIf="(fgValidator.controls['estatura'].invalid && fgValidator.controls['estatura'].touched) || fgValidator.controls['estatura'].dirty">
+                                <small *ngIf="fgValidator.controls['estatura'].errors" class="text-danger">estatura is required</small>
+                                <!--question mark(?) is a safe navigation operator-->
+                                <small *ngIf="!fgValidator.controls['estatura'].valid" class="text-danger">  - Please register valid values</small>
+                                <small *ngIf="fgValidator.controls['estatura'].errors?.['numberRegEx']" class="text-danger">Please provide a valid estatura</small>
+                                <small *ngIf="fgValidator.controls['estatura'].errors?.['minLength']" class="text-danger">  - Min 1 characters</small>
+                                <small *ngIf="fgValidator.controls['estatura'].errors?.['maxLength']" class="text-danger">  - Max 4 characters</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div><br>
+              
+                        <div class="form-field">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">pets</i>
+                            <label class="active" for="colorojos">Color ojos</label>
+                            <input formControlName="colorojos" type="text" id="colorojos" class="validate" minlength="4" maxlength="30" required="required">
+                            <div class="red accent-1" *ngIf="(fgValidator.controls['colorojos'].invalid && fgValidator.controls['colorojos'].touched) || fgValidator.controls['colorojos'].dirty">
+                              <small *ngIf="fgValidator.controls['colorojos'].errors?.['required']" class="text-danger"> Element is required</small>
+                              <small *ngIf="!fgValidator.controls['colorojos'].valid" class="text-danger">  - Please register valid values</small>
+                              <small *ngIf="fgValidator.controls['colorojos'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                              <small *ngIf="fgValidator.controls['colorojos'].errors?.['maxLength']" class="text-danger">  - Max 30 characters</small>
+                            </div>
+                          </div>
+                        </div><br>
+              
+                        <div class="form-field">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">pets</i>
+                            <label class="active" for="colorpiel">Color Piel</label>
+                            <input formControlName="colorpiel" type="text" id="colorpiel" class="validate" minlength="2" maxlength="20" required="required">
+                            <div class="red accent-1" *ngIf="(fgValidator.controls['colorpiel'].invalid && fgValidator.controls['colorpiel'].touched) || fgValidator.controls['colorpiel'].dirty">
+                              <small *ngIf="fgValidator.controls['colorpiel'].errors?.['required']" class="text-danger"> Element is required</small>
+                              <small *ngIf="!fgValidator.controls['colorpiel'].valid" class="text-danger">  - Please register valid values</small>
+                              <small *ngIf="fgValidator.controls['colorpiel'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                              <small *ngIf="fgValidator.controls['colorpiel'].errors?.['maxLength']" class="text-danger">  - Max 30 characters</small>
+                            </div>
+                          </div>
+                        </div><br>
+          
+                        <div class="form-field">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">face</i>
+                            <label class="active" for="propietariomascotaid">Propietario</label>
+                            <input formControlName="propietariomascotaid" type="text" id="propietariomascotaid" class="validate" minlength="4" maxlength="30" required="required">
+                            <div class="red accent-1" *ngIf="(fgValidator.controls['propietariomascotaid'].invalid && fgValidator.controls['propietariomascotaid'].touched) || fgValidator.controls['propietariomascotaid'].dirty">
+                              <small *ngIf="fgValidator.controls['propietariomascotaid'].errors?.['required']" class="text-danger"> Element is required</small>
+                              <small *ngIf="!fgValidator.controls['propietariomascotaid'].valid" class="text-danger">  - Please register valid values</small>
+                              <small *ngIf="fgValidator.controls['propietariomascotaid'].errors?.['minLength']" class="text-danger">  - Min 5 characters</small>
+                              <small *ngIf="fgValidator.controls['propietariomascotaid'].errors?.['maxLength']" class="text-danger">  - Max 30 characters</small>
+                            </div>
+                          </div>
+                        </div><br>
+
+                    <div class="form-field">
+                        <button [disabled]="!fgValidator.valid" class="btn-large waves-effect waves-dark"
+                            style="width:100%;">Save Changes
+                            <i class="material-icons right">send</i>
+                        </button>
+
+                        <a class="waves-effect teal lighten-3 waves-light btn-large" style="width:100%;"
+                            routerLink="/administration/search-pet">List Elements <i
+                                class="material-icons right">remove_red_eye
+                            </i></a>
+
+                    </div><br>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

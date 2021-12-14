@@ -1,1 +1,64 @@
-<p>search-pet works!</p>
+<div class="row">
+    <a routerLink="/administration/create-pet" class="btn-large pulse right waves-effect">New PET<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                id
+            </th>
+            <th class="white-text center-align">
+                Nombre
+            </th>
+            <th class="white-text center-align">
+                Color Ojos
+            </th>
+            <th class="white-text center-align">
+                Color Piel
+            </th>
+            <th class="white-text center-align">
+                Estatura
+            </th>
+            <th class="white-text center-align">
+                Raza
+            </th>
+            <th class="white-text center-align">
+                tipo Animal Id
+            </th>
+            <th class="white-text center-align">
+                propietario Mascota Id
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of PetList">
+            <td class="left-align">
+                {{vt.id}}
+            </td>
+            <td class="center-align">
+                {{vt.Nombre}}
+            </td>
+            <td class="center-align">
+                {{vt.ColorOjos}}
+            </td>
+            <td class="center-align">
+                {{vt.ColorPiel}}
+            </td>
+            <td class="center-align">
+                {{vt.Estatura}}
+            </td>
+            <td class="center-align">
+                {{vt.Raza}}
+            </td>
+            <td class="center-align">
+                {{vt.tipoAnimalId}}
+            </td>
+            <td class="right-align">
+                {{vt.propietarioMascotaId}}
+            </td>
+            <td class="center-align">
+                <a routerLink="/administration/edit-pet/{{vt.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

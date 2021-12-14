@@ -1,4 +1,4 @@
-export class PetOwnerModel{
+export class DoctorModel{
     id?: string;
     personaId?: string;
     empresaVeterinariaId?: number;

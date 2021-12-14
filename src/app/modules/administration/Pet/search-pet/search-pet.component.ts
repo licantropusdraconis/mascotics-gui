@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PetModel } from 'src/app/models/pet.model';
+import { PetService } from 'src/app/services/pet.service';
 
 @Component({
   selector: 'app-search-pet',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPetComponent implements OnInit {
 
-  constructor() { }
+  PetList: PetModel[] = [];
+
+  constructor(private PetService: PetService) { }
 
   ngOnInit(): void {
+    this.GetPetList();
+  }
+
+  //method to get the list of Pet elements
+  GetPetList(){
+    this.PetService.GetPet().subscribe((data: PetModel[])=>{
+      this.PetList = data;
+      console.log(data);
+    })
   }
 
 }

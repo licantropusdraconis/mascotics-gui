@@ -1,1 +1,31 @@
-<p>search-owner works!</p>
+<div class="row">
+    <a routerLink="/administration/create-pet-owner" class="btn-large pulse right waves-effect">New Pet Owner<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                id
+            </th>
+            <th class="white-text center-align">
+                persona
+            </th>
+            <th class="white-text right-align">
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of PetOwnerList">
+            <td class="left-align">
+                {{vt.id}}
+            </td>
+            <td class="center-align">
+                {{vt.personaId}}
+            </td>
+            <td class="right-align">
+                <a routerLink="/administration/edit-pet-owner/{{vt.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
