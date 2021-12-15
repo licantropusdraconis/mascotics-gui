@@ -10,6 +10,7 @@ import { CreateCheckComponent } from './check/create-check/create-check.componen
 import { EditCheckComponent } from './check/edit-check/edit-check.component';
 import { DeleteCheckComponent } from './check/delete-check/delete-check.component';
 import { SearchCheckComponent } from './check/search-check/search-check.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { SearchCheckComponent } from './check/search-check/search-check.componen
   ],
   imports: [
     CommonModule,
-    VeterinaryVisitRoutingModule
+    VeterinaryVisitRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class VeterinaryVisitModule { }

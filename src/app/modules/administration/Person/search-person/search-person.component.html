@@ -1,1 +1,61 @@
-<p>search-person works!</p>
+<div class="row">
+    <a routerLink="/administration/create-person" class="btn-large pulse right waves-effect">New Person<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                Id
+            </th>
+            <th class="white-text center-align">
+                TIpo Doc Id.
+            </th>
+            <th class="white-text center-align">
+                Nombres
+            </th>
+            <th class="white-text center-align">
+                Apellidos
+            </th>
+            <th class="white-text center-align">
+                Dirección
+            </th>
+            <th class="white-text center-align">
+                Telefono
+            </th>
+            <th class="white-text center-align">
+                Correo
+            </th>
+            <th class="white-text right-align">
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of PersonList">
+            <td class="left-align">
+                {{vt.id}}
+            </td>
+            <td class="left-align">
+                {{vt.TipoDocIdentificacion}}
+            </td>
+            <td class="center-align">
+                {{vt.Nombres}}
+            </td>
+            <td class="center-align">
+                {{vt.Apellidos}}
+            </td>
+            <td class="center-align">
+                {{vt.Direccion}}
+            </td>
+            <td class="center-align">
+                {{vt.Telefono}}
+            </td>
+            <td class="center-align">
+                {{vt.Correo}}
+            </td>
+            <td class="right-align">
+                <a routerLink="/administration/edit-person/{{vt.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

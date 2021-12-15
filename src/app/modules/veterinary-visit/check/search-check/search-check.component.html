@@ -1,1 +1,76 @@
-<p>search-check works!</p>
+<div class="row">
+    <a routerLink="/veterinary-visit/create-check" class="btn-large pulse right waves-effect">New check<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                Id
+            </th>
+            <th class="white-text center-align">
+                Fecha de atención
+            </th>
+            <th class="white-text center-align">
+                Temperatura
+            </th>
+            <th class="white-text center-align">
+                Peso
+            </th>
+            <th class="white-text center-align">
+                Frecuencia Cardiaca
+            </th>
+            <th class="white-text center-align">
+                Estado Animo
+            </th>
+            <th class="white-text center-align">
+                Recomendaciones
+            </th>
+            <th class="white-text center-align">
+                Medicamentos
+            </th>
+            <th class="white-text center-align">
+                Solicitud Visita Domiciliaria
+            </th>
+            <th class="white-text right-align">
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of CheckList">
+            <td class="left-align">
+                {{vt.id}}
+            </td>
+            <td class="left-align">
+                {{vt.FechaAtencion}}
+            </td>
+            <td class="center-align">
+                {{vt.Temperatura}}
+            </td>
+            <td class="center-align">
+                {{vt.Peso}}
+            </td>
+            <td class="center-align">
+                {{vt.FrecuenciaRespiratoria}}
+            </td>
+            <td class="center-align">
+                {{vt.FrecuenciaCardiaca}}
+            </td>
+            <td class="center-align">
+                {{vt.EstadoAnimo}}
+            </td>
+            <td class="center-align">
+                {{vt.Recomendaciones}}
+            </td>
+            <td class="center-align">
+                {{vt.Medicamentos}}
+            </td>
+            <td class="center-align">
+                {{vt.solicitudVisitaDomiciliariaId}}
+            </td>
+            <td class="right-align">
+                <a routerLink="/veterinary-visit/edit-check/{{vt.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

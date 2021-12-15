@@ -1,1 +1,196 @@
-<p>edit-check works!</p>
+<div class="row">
+    <div class="col s12 m10 l12 offset-m1">
+        <div class="card">
+
+            <div class="card-action teal lighten-1 white-text">
+                <h4>Update Medical Check <i class="material-icons prefix">visibility</i> <i class="material-icons prefix">pets</i></h4>
+            </div>
+
+            <div class="card-content">
+                <form [formGroup]="fgValidator" (ngSubmit)="EditMedicalCheck()">
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <!--
+                                /* Medical Check model:
+                                id?: string;
+                                FechaAtencion?: string;
+                                Temperatura?: number;
+                                Peso?: number;
+                                FrecuenciaRespiratoria?: number;
+                                FrecuenciaCardiaca?: number;
+                                EstadoAnimo?: string;
+                                Recomendaciones?: string;
+                                Medicamentos?: string;
+                                solicitudVisitaDomiciliariaId?: string;
+                            */
+                            -->
+                            <i class="material-icons prefix">today</i>
+                            <label class="active" for="fechaatencion">Fecha Atencion (YYYY-MM-DD HH:MM:SS)</label>
+                            <input formControlName="fechaatencion" type="text" id="fechaatencion"
+                                class="validate" minlength="19" maxlength="19" required="required">
+                            <div class="red accent-1" role="alert">
+                                <div
+                                    *ngIf="(fgValidator.controls['fechaatencion'].invalid && fgValidator.controls['fechaatencion'].touched) || fgValidator.controls['fechaatencion'].dirty">
+                                    <small *ngIf="fgValidator.controls['fechaatencion'].errors"
+                                        class="text-danger">element is required (mandatory)</small>
+                                    <!--question mark(?) is a safe navigation operator-->
+                                    <small *ngIf="!fgValidator.controls['fechaatencion'].valid"
+                                        class="text-danger"> - Please register valid data</small>
+                                    <small *ngIf="fgValidator.controls['fechaatencion'].errors?.['numberRegEx']"
+                                        class="text-danger">Please provide a valid element</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">straighten</i>
+                            <label class="active" for="temperatura">temperatura</label>
+                            <input formControlName="temperatura" type="number" id="temperatura" class="validate" minlength="1"
+                                maxlength="3" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['temperatura'].invalid && fgValidator.controls['temperatura'].touched) || fgValidator.controls['temperatura'].dirty">
+                                <small *ngIf="fgValidator.controls['temperatura'].errors?.['required']" class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['temperatura'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">spa</i>
+                            <label class="active" for="peso">peso</label>
+                            <input formControlName="peso" type="number" id="peso" class="validate" minlength="1"
+                                maxlength="3" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['peso'].invalid && fgValidator.controls['peso'].touched) || fgValidator.controls['peso'].dirty">
+                                <small *ngIf="fgValidator.controls['peso'].errors?.['required']"
+                                    class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['peso'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">filter_drama</i>
+                            <label class="active" for="frecuenciarespiratoria">Frecuencia Respiratoria</label>
+                            <input formControlName="frecuenciarespiratoria" type="number" id="frecuenciarespiratoria" class="validate" minlength="1"
+                                maxlength="3" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['frecuenciarespiratoria'].invalid && fgValidator.controls['frecuenciarespiratoria'].touched) || fgValidator.controls['frecuenciarespiratoria'].dirty">
+                                <small *ngIf="fgValidator.controls['frecuenciarespiratoria'].errors?.['required']"
+                                    class="text-danger"> Element is required</small>
+                                <small *ngIf="!fgValidator.controls['frecuenciarespiratoria'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">favorite</i>
+                            <label class="active" for="frecuenciacardiaca">Frecuencia Cardiaca</label>
+                            <input formControlName="frecuenciacardiaca" type="number" id="frecuenciacardiaca"class="validate" minlength="1"
+                            maxlength="3" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['frecuenciacardiaca'].invalid && fgValidator.controls['frecuenciacardiaca'].touched) || fgValidator.controls['frecuenciacardiaca'].dirty">
+                                <small *ngIf="fgValidator.controls['frecuenciacardiaca'].errors?.['required']"
+                                    class="text-danger"> Element is required</small>
+                                <small *ngIf="!fgValidator.controls['frecuenciacardiaca'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">insert_emoticon</i>
+                            <label class="active" for="estadoanimo">estado animo</label>
+                            <input formControlName="estadoanimo" type="text" id="estadoanimo" class="validate" minlength="5"
+                                maxlength="20" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['estadoanimo'].invalid && fgValidator.controls['estadoanimo'].touched) || fgValidator.controls['estadoanimo'].dirty">
+                                <small *ngIf="fgValidator.controls['estadoanimo'].errors?.['required']" class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['estadoanimo'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">assistant</i>
+                            
+                            <textarea class="materialize-textarea" formControlName="recomendaciones" id="recomendaciones" class="validate" minlength="5"
+                                maxlength="150" required="required" data-length="150"></textarea>
+                            <label class="active" for="recomendaciones">recomendaciones</label>
+                            
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['recomendaciones'].invalid && fgValidator.controls['recomendaciones'].touched) || fgValidator.controls['recomendaciones'].dirty">
+                                <small *ngIf="fgValidator.controls['recomendaciones'].errors?.['required']" class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['recomendaciones'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">local_pharmacy</i>
+                            
+                            <textarea formControlName="medicamentos" id="medicamentos" class="validate" minlength="5"
+                                maxlength="150" required="required"></textarea>
+                            <label class="active" for="medicamentos">medicamentos</label>
+
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['medicamentos'].invalid && fgValidator.controls['medicamentos'].touched) || fgValidator.controls['medicamentos'].dirty">
+                                <small *ngIf="fgValidator.controls['medicamentos'].errors?.['required']" class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['medicamentos'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">assignment_ind</i>
+                            <label class="active" for="solicitudvisitadomiciliariaid">solicitudvisitadomiciliariaid</label>
+                            <input formControlName="solicitudvisitadomiciliariaid" type="text" id="solicitudvisitadomiciliariaid" class="validate" minlength="21"
+                                maxlength="24" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['solicitudvisitadomiciliariaid'].invalid && fgValidator.controls['solicitudvisitadomiciliariaid'].touched) || fgValidator.controls['solicitudvisitadomiciliariaid'].dirty">
+                                <small *ngIf="fgValidator.controls['solicitudvisitadomiciliariaid'].errors?.['required']" class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['solicitudvisitadomiciliariaid'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <button [disabled]="!fgValidator.valid" class="btn-large waves-effect waves-dark"
+                            style="width:100%;">Update
+                            <i class="material-icons right">send</i>
+                        </button>
+
+                        <a class="waves-effect teal lighten-3 waves-light btn-large" style="width:100%;"
+                            routerLink="/veterinary-visit/search-check">List Elements <i
+                                class="material-icons right">remove_red_eye
+                            </i></a>
+
+                    </div><br>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

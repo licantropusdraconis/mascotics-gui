@@ -15,7 +15,7 @@ const routes: Routes = [
     component: CreateAppointmentComponent
   },
   {
-    path: "edit-appointment",
+    path: "edit-appointment/:id",
     component: EditAppointmentComponent
   },
   {
@@ -31,7 +31,7 @@ const routes: Routes = [
     component: CreateCheckComponent
   },
   {
-    path: "edit-check",
+    path: "edit-check/:id",
     component: EditCheckComponent
   },
   {

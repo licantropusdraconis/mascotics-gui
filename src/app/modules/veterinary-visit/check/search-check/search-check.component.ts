@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MedicalCheckModel } from 'src/app/models/medicalCheck.model';
+import { MedicalCheckService } from 'src/app/services/medical-check.service';
 
 @Component({
   selector: 'app-search-check',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCheckComponent implements OnInit {
 
-  constructor() { }
+  CheckList: MedicalCheckModel[] = [];
+
+  constructor(private CheckService: MedicalCheckService) { }
 
   ngOnInit(): void {
+    this.GetCheckList();
+  }
+
+  //method to get the list of Check elements
+  GetCheckList(){
+    this.CheckService.GetMedicalCheck().subscribe((data: MedicalCheckModel[])=>{
+      this.CheckList = data;
+      console.log(data);
+    })
   }
 
 }

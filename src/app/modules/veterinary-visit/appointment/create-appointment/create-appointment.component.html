@@ -1,46 +1,105 @@
 <div class="row">
-    <div class="col s12 m8 l8 offset-m2 offset-l2">
+    <div class="col s12 m10 l12 offset-m1">
         <div class="card">
 
             <div class="card-action teal lighten-1 white-text">
-                <h3>New Appointment</h3>
+                <h4>New Appointment for Medical Examination <i class="material-icons prefix">visibility</i> <i class="material-icons prefix">pets</i></h4>
             </div>
 
             <div class="card-content">
-                <div class="form-field">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <label for="username">Username</label>
-                        <input type="text" id="username" class="validate">
-                    </div>
-                </div><br>
+                <form [formGroup]="fgValidator" (ngSubmit)="CreateAppointment()">
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <!--
+                                /* Medical Check model:
+                                id?: string;
+                                FechaEstimadaDeAtencion?: string;
+                                propietarioMascotaId?: string;
+                                medicoVeterinarioId?: string;
+                                mascotaId?: string;
+                            */
+                            -->
+                            <i class="material-icons prefix">today</i>
+                            <label for="fechaestimadadeatencion">Fecha Atencion Estimada (YYYY-MM-DD HH:MM:SS)</label>
+                            <input formControlName="fechaestimadadeatencion" type="text" id="fechaestimadadeatencion"
+                                class="validate" minlength="19" maxlength="19" required="required">
+                            <div class="red accent-1" role="alert">
+                                <div
+                                    *ngIf="(fgValidator.controls['fechaestimadadeatencion'].invalid && fgValidator.controls['fechaestimadadeatencion'].touched) || fgValidator.controls['fechaestimadadeatencion'].dirty">
+                                    <small *ngIf="fgValidator.controls['fechaestimadadeatencion'].errors"
+                                        class="text-danger">element is required (mandatory)</small>
+                                    <!--question mark(?) is a safe navigation operator-->
+                                    <small *ngIf="!fgValidator.controls['fechaestimadadeatencion'].valid"
+                                        class="text-danger"> - Please register valid data</small>
+                                    <small *ngIf="fgValidator.controls['fechaestimadadeatencion'].errors?.['numberRegEx']"
+                                        class="text-danger">Please provide a valid element</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
 
-                <div class="form-field">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">vpn_key</i>
-                        <label for="password">Password</label>
-                        <input type="password" id="password" class="validate">
-                        <!--<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>-->
-                    </div>
-                </div><br>
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <label for="propietariomascotaid">propietario mascota id</label>
+                            <input formControlName="propietariomascotaid" type="text" id="propietariomascotaid" class="validate" minlength="1"
+                                maxlength="30" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['propietariomascotaid'].invalid && fgValidator.controls['propietariomascotaid'].touched) || fgValidator.controls['propietariomascotaid'].dirty">
+                                <small *ngIf="fgValidator.controls['propietariomascotaid'].errors?.['required']" class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['propietariomascotaid'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
 
-                <div class="form-field">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" checked="checked" />
-                            <span>Remember me</span>
-                        </label>
-                    </p>
-                </div><br>
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">local_hospital</i>
+                            <label for="medicoveterinarioid">medico veterinario id</label>
+                            <input formControlName="medicoveterinarioid" type="text" id="medicoveterinarioid" class="validate" minlength="1"
+                                maxlength="30" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['medicoveterinarioid'].invalid && fgValidator.controls['medicoveterinarioid'].touched) || fgValidator.controls['medicoveterinarioid'].dirty">
+                                <small *ngIf="fgValidator.controls['medicoveterinarioid'].errors?.['required']"
+                                    class="text-danger">
+                                    Element is required</small>
+                                <small *ngIf="!fgValidator.controls['medicoveterinarioid'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
 
-                <div class="form-field">
-                    <button class="btn-large waves-effect waves-dark" style="width:100%;">Create
-                        <i class="material-icons right">send</i>
-                    </button>
-                    
-                    <a class="waves-effect waves-light btn-large" style="width:100%;">Questions? <i class="material-icons right">error_outline</i></a>
-                    
-                </div><br>
+                    <div class="form-field">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">pets</i>
+                            <label for="mascotaid">Mascota</label>
+                            <input formControlName="mascotaid" type="text" id="mascotaid" class="validate" minlength="1"
+                                maxlength="30" required="required">
+                            <div class="red accent-1"
+                                *ngIf="(fgValidator.controls['mascotaid'].invalid && fgValidator.controls['mascotaid'].touched) || fgValidator.controls['mascotaid'].dirty">
+                                <small *ngIf="fgValidator.controls['mascotaid'].errors?.['required']"
+                                    class="text-danger"> Element is required</small>
+                                <small *ngIf="!fgValidator.controls['mascotaid'].valid" class="text-danger"> - Please
+                                    register valid values</small>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-field">
+                        <button [disabled]="!fgValidator.valid" class="btn-large waves-effect waves-dark"
+                            style="width:100%;">Create
+                            <i class="material-icons right">send</i>
+                        </button>
+
+                        <a class="waves-effect teal lighten-3 waves-light btn-large" style="width:100%;"
+                            routerLink="/veterinary-visit/search-appointment">List Elements <i
+                                class="material-icons right">remove_red_eye
+                            </i></a>
+
+                    </div><br>
+                </form>
             </div>
 
         </div>

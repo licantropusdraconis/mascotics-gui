@@ -1,1 +1,49 @@
-<p>search-appointment works!</p>
+<div class="row">
+    <a routerLink="/veterinary-visit/create-appointment" class="btn-large pulse right waves-effect">New Appointment<i class="material-icons right">send</i></a>
+</div>
+<table class="responsive-table highlight">
+    <thead class="cyan darken-2">
+        <tr>
+            <th class="white-text left-align">
+                Id
+            </th>
+            <th class="white-text center-align">
+                Fecha estimada de atención
+            </th>
+            <th class="white-text center-align">
+                Propietario Mascota
+            </th>
+            <th class="white-text center-align">
+                Medico Veterinario
+            </th>
+            <th class="white-text center-align">
+                Mascota
+            </th>
+            <th class="white-text right-align">
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vt of AppointmentList">
+            <td class="left-align">
+                {{vt.id}}
+            </td>
+            <td class="left-align">
+                {{vt.FechaEstimadaDeAtencion}}
+            </td>
+            <td class="center-align">
+                {{vt.propietarioMascotaId}}
+            </td>
+            <td class="center-align">
+                {{vt.medicoVeterinarioId}}
+            </td>
+            <td class="center-align">
+                {{vt.mascotaId}}
+            </td>
+            <td class="right-align">
+                <a routerLink="/veterinary-visit/edit-appointment/{{vt.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
