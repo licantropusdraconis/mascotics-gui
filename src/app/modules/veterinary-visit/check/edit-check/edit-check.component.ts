@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditCheckComponent implements OnInit {
   id:string = '';
-  numberRegEx = '^[+ 0-9]';
+  numberRegEx = '^([0-9]+)';
   textRegEx2 = '^([ a-zA-Z0-9áéíóúÁÉÍÓÚ_\.:¿?!!,;-]+)';
   dateTimeRegEx = '^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31) ([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$';
 

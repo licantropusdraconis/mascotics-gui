@@ -12,7 +12,7 @@ import 'materialize-css';
 })
 export class CreateCheckComponent implements OnInit {
 
-  numberRegEx = '^[+ 0-9]';
+  numberRegEx = '^([0-9]+)';
   textRegEx2 = '^([ a-zA-Z0-9áéíóúÁÉÍÓÚ_\.:¿?!!,;-]+)';
   dateTimeRegEx = '^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31) ([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$';
 
@@ -85,7 +85,7 @@ export class CreateCheckComponent implements OnInit {
     vt.solicitudVisitaDomiciliariaId = solicitudvisitadomiciliariaid;
     this.MedicalCheckService.CreateMedicalCheck(vt).subscribe((data:MedicalCheckModel)=>{
       alert(` MedicalCheck ${fechaatencion} ${solicitudvisitadomiciliariaid} ${recomendaciones} ${medicamentos} Created!`);
-      this.router.navigate(["/administration/search-check"])
+      this.router.navigate(["/veterinary-visit/search-check"])
     }, (_error: any)=>{
       alert("Error creating MedicalCheck");
     }
